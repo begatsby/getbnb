@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Local SQLite DB
+db.sqlite3
+
+# Django migrations temporarily ignored
+migrations/
