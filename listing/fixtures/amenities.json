@@ -1,0 +1,72 @@
+[
+  {
+    "model": "listing.Amenity",
+    "pk": 1,
+    "fields": {
+      "name": "Essentials"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 2,
+    "fields": {
+      "name": "TV"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 3,
+    "fields": {
+      "name": "Cable TV"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 4,
+    "fields": {
+      "name": "Air Conditioning"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 5,
+    "fields": {
+      "name": "Heating"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 6,
+    "fields": {
+      "name": "Kitchen"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 7,
+    "fields": {
+      "name": "Internet"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 8,
+    "fields": {
+      "name": "Wireless Internet"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 9,
+    "fields": {
+      "name": "24-Hour Check-in"
+    }
+  },
+  {
+    "model": "listing.Amenity",
+    "pk": 10,
+    "fields": {
+      "name": "Washer"
+    }
+  }
+]

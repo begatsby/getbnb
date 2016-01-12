@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import PropertyType, RoomType, Property
+from .models import PropertyType, RoomType, Property, Amenity, PropertyAmenity
 
 
 @admin.register(PropertyType)
@@ -13,8 +13,19 @@ class RoomTypeAdmin(admin.ModelAdmin):
     list_display = ['pk', 'name']
 
 
+@admin.register(Amenity)
+class AmenityAdmin(admin.ModelAdmin):
+    list_display = ['pk', 'name']
+
+
+class PropertyAmenityInline(admin.StackedInline):
+    model = PropertyAmenity
+    extra = 1
+
+
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     list_display = ['pk', 'name', 'property_type', 'room_type',
         'accomodation_count', 'bedroom_count', 'bed_count',
         'bathroom_count', 'is_published']
+    inlines = [PropertyAmenityInline]
