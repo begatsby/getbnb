@@ -76,7 +76,8 @@ class Photo(models.Model):
         related_name='photos'
     )
     title = models.CharField(max_length=60, blank=True, null=True)
-    url = models.URLField()
+    url = models.URLField(blank=True, null=True)
+    file = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
         return self.url

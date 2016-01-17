@@ -1,7 +1,9 @@
 from django.contrib import admin
 
-from .models import PropertyType, RoomType, Property, Amenity, PropertyAmenity
-
+from .models import (
+    PropertyType, RoomType, Property, Amenity, PropertyAmenity,
+    Photo
+)
 
 @admin.register(PropertyType)
 class PropertyTypeAdmin(admin.ModelAdmin):
@@ -23,9 +25,14 @@ class PropertyAmenityInline(admin.StackedInline):
     extra = 1
 
 
+class PhotoInline(admin.StackedInline):
+    model = Photo
+    extra = 1
+
+
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     list_display = ['pk', 'name', 'property_type', 'room_type',
         'accomodation_count', 'bedroom_count', 'bed_count',
         'bathroom_count', 'is_published']
-    inlines = [PropertyAmenityInline]
+    inlines = [PropertyAmenityInline, PhotoInline]

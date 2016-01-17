@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
+    'django_s3_storage',
     'listing',
     'message',
     'people'
@@ -123,3 +124,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# These settings come from Django s3 storages project
+# https://github.com/etianen/django-s3-storage
+DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
+AWS_REGION = 'eu-central-1'
+AWS_ACCESS_KEY_ID = 'AKIAIHFPQG5CLLLCMEZA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_S3_BUCKET_NAME = 'uploads.getbnb'
+AWS_S3_BUCKET_AUTH = False
+AWS_S3_MAX_AGE_SECONDS = 60*60*24*365
