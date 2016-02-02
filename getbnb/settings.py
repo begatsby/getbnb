@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_countries',
     'django_s3_storage',
+    'imagekit',
     'listing',
     'message',
     'people'
@@ -129,8 +130,8 @@ STATIC_URL = '/static/'
 # https://github.com/etianen/django-s3-storage
 DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 AWS_REGION = 'eu-central-1'
-AWS_ACCESS_KEY_ID = 'AKIAIHFPQG5CLLLCMEZA'
-AWS_SECRET_ACCESS_KEY = 'fC4aKP3AWqudm0HQZvkshMGsZisvsnLcHQB81Do8'
+AWS_ACCESS_KEY_ID = 'Your Amazon Web Services access key ID'
+AWS_SECRET_ACCESS_KEY = 'You Amazon Web Services access key secret'
 AWS_S3_BUCKET_NAME = 'uploads.getbnb'
 AWS_S3_BUCKET_AUTH = False
 AWS_S3_MAX_AGE_SECONDS = 60*60*24*365

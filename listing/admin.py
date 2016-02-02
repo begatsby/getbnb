@@ -1,4 +1,6 @@
 from django.contrib import admin
+from imagekit.admin import AdminThumbnail
+
 
 from .models import (
     PropertyType, RoomType, Property, Amenity, PropertyAmenity,
