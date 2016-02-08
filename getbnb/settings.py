@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
-    'django_s3_storage',
     'imagekit',
     'listing',
     'message',
@@ -61,14 +60,16 @@ ROOT_URLCONF = 'getbnb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
@@ -126,12 +127,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# These settings come from Django s3 storages project
-# https://github.com/etianen/django-s3-storage
-DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
-AWS_REGION = 'eu-central-1'
-AWS_ACCESS_KEY_ID = 'Your Amazon Web Services access key ID'
-AWS_SECRET_ACCESS_KEY = 'You Amazon Web Services access key secret'
-AWS_S3_BUCKET_NAME = 'uploads.getbnb'
-AWS_S3_BUCKET_AUTH = False
-AWS_S3_MAX_AGE_SECONDS = 60*60*24*365
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/uploads/'
