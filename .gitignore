@@ -58,3 +58,6 @@ target/
 
 # Local SQLite DB
 db.sqlite3
+
+# Media uploads
+uploads/
