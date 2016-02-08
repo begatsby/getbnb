@@ -81,12 +81,12 @@ class Photo(models.Model):
     file = models.ImageField(upload_to='photos', blank=True, null=True)
     thumb_small = ImageSpecField(
         source='file',
-        processors=[ResizeToFill(350, 250)],
+        processors=[ResizeToFill(350, 200)],
         options={'quality': 85}
     )
 
     def __str__(self):
-        return self.url
+        return self.title
 
 
 class Amenity(models.Model):
