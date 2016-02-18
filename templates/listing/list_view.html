@@ -5,11 +5,11 @@
   <div class="row">
 {% for room in rooms %}
     <div class="col-md-4"><div class="thumbnail">
-      <h4>{{ room.name }}</h4>
       {% with room.photos.first as image %}
-      <a href="#"><img src="{{ image.thumb_small.url }}" alt="{{ room.name }}"></a>
+      <a href="{% url 'listing-detail' room.id %}"><img src="{{ image.thumb_small.url }}" alt="{{ room.name }}"></a>
       {% endwith %}
-      <span>{{ room.property_type }} / {{ room.room_type }}</span>
+      <h4>{{ room.name }}</h4>
+      <span>{{ room.room_type }}</span>
     </div></div>
 {% endfor %}
   </div>

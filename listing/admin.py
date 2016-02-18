@@ -1,6 +1,8 @@
 from django.contrib import admin
 from imagekit.admin import AdminThumbnail
 
+from .forms import PropertyAdminForm
+
 
 from .models import (
     PropertyType, RoomType, Property, Amenity, PropertyAmenity,
@@ -34,6 +36,7 @@ class PhotoInline(admin.StackedInline):
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
+    form = PropertyAdminForm
     list_display = ['pk', 'name', 'property_type', 'room_type',
         'accomodation_count', 'bedroom_count', 'bed_count',
         'bathroom_count', 'is_published']

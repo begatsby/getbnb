@@ -12,7 +12,7 @@ class Profile(models.Model):
         (GENDER_OTHER, 'Other')
     ]
 
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL)
+    owner = models.OneToOneField(settings.AUTH_USER_MODEL)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True, null=False)
     dob = models.DateField(blank=True, null=True)
     phone = models.CharField(max_length=15, blank=True, null=True)
